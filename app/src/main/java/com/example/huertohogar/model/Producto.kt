@@ -4,7 +4,7 @@ data class Producto(
     val id: Int,
     val nombre: String,
     val descripcion: String,
-    val precio: String,        // <-- CAMBIADO a String
+    val precio: String,
     val categoria_id: Int,
     val imagen: String,
     val stock: Int,

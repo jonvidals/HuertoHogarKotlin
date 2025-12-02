@@ -72,7 +72,7 @@ fun RootApp(
         }
     }
 
-    // LOGIN → sin drawer ni bottom bar
+
     if (currentRoute == Screen.Login.route || currentRoute == null) {
         AppNavHost(
             navController = navController,
@@ -122,7 +122,7 @@ fun RootApp(
                         navController = navController,
                         mainViewModel = mainViewModel,
                         productListViewModel = productListViewModel,
-                        cartViewModel = cartViewModel   // ← FALTABA AQUÍ
+                        cartViewModel = cartViewModel
                     )
                 }
             }

@@ -32,15 +32,12 @@ fun ProductListScreen(
     val error by listViewModel.error.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // Estado para activar snackbar cuando se agrega un producto
     var addedProductName by remember { mutableStateOf<String?>(null) }
 
-    // Cargar datos al entrar
     LaunchedEffect(Unit) {
         listViewModel.loadFromApi()
     }
 
-    // Mostrar snackbar cuando addedProductName cambia
     LaunchedEffect(addedProductName) {
         addedProductName?.let { name ->
             snackbarHostState.showSnackbar(
@@ -91,7 +88,6 @@ fun ProductListScreen(
                     producto = producto,
                     onClick = { onProductClick(producto.id) },
 
-                    // Aquí solo enviamos la acción, no usamos LaunchedEffect
                     onAddToCart = {
                         cartViewModel.add(producto)
                         addedProductName = producto.nombre

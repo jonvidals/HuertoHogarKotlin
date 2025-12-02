@@ -17,7 +17,6 @@ fun BottomNavBar(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    // cantidad de productos
     val items by cartViewModel.items.collectAsState()
     val count = items.sumOf { it.quantity }
 
